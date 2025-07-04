@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Untuk Vika</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: linear-gradient(270deg, #ffe6f0, #fff0f5, #fff5e6);
+      background-size: 600% 600%;
+      animation: bgAnimation 20s ease infinite;
+      font-family: 'Dancing Script', cursive;
+    }
+
+    @keyframes bgAnimation {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 100px;
+      font-size: 3.2em;
+      color: #e60073;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(-20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    .marquee {
+      position: absolute;
+      bottom: 20px;
+      width: 100%;
+      font-size: 1.5em;
+      color: #cc0066;
+      font-weight: bold;
+      text-align: center;
+      animation: scrollText 15s linear infinite;
+      white-space: nowrap;
+    }
+
+    @keyframes scrollText {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+
+    button {
+      display: block;
+      margin: 50px auto;
+      padding: 15px 40px;
+      font-size: 1.5em;
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+      transition: all 0.4s ease;
+      text-shadow: 1px 1px 3px #c9005f;
+    }
+
+    button:hover {
+      background-color: #ff1493;
+      transform: scale(1.1);
+      box-shadow: 0 12px 20px rgba(255, 20, 147, 0.4);
+    }
+
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: red;
+      transform: rotate(45deg);
+      animation: fall 6s linear infinite;
+      opacity: 0.8;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: red;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+
+    @keyframes fall {
+      0% {
+        top: -10%;
+        opacity: 1;
+        transform: translateX(0) rotate(45deg);
+      }
+      100% {
+        top: 110%;
+        opacity: 0;
+        transform: translateX(30px) rotate(45deg);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Jangan marah ya sayang Kakaa 💖</h1>
+
+  <button onclick="alert('Kaka sayang Vika selamanya 💗')">Maafin aku ya 🥺</button>
+
+  <div class="marquee">Kaka gak mau lihat Vika marah. Kamu itu senyumku, semangatku, bahagiaku 🥰</div>
+
+  <!-- Musik YouTube autoplay (volume akan sesuai sistem pengguna) -->
+  <iframe width="0" height="0" src="https://www.youtube.com/embed/YxvxtXxhY3U?autoplay=1&loop=1&playlist=YxvxtXxhY3U" frameborder="0" allow="autoplay"></iframe>
+
+  <!-- Hati animasi -->
+  <script>
+    for (let i = 0; i < 40; i++) {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (3 + Math.random() * 3) + "s";
+      heart.style.opacity = Math.random();
+      document.body.appendChild(heart);
+    }
+  </script>
+
+</body>
+</html>
